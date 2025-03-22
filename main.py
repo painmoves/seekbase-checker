@@ -54,10 +54,18 @@ def test_login(email, password):
 
         if welcome_text:
             print(f"{Fore.CYAN}[{Fore.WHITE}!{Fore.CYAN}] Connexion réussie pour {Fore.GREEN}{email} !")
+
+            coins_element = WebDriverWait(driver, 10).until(
+                EC.presence_of_element_located((By.CLASS_NAME, "credits-amount"))
+            )
+            coins = coins_element.text  
+            print(f"{Fore.CYAN}[{Fore.WHITE}!{Fore.CYAN}] {Fore.GREEN}{email}{Fore.CYAN} a {Fore.YELLOW}{coins} coins.")
+            
         else:
             print(f"{Fore.CYAN}[{Fore.WHITE}x{Fore.CYAN}] Échec de la connexion pour {Fore.GREEN}{email}")
     except Exception as e:
         print(f"{Fore.CYAN}[{Fore.WHITE}ERROR{Fore.CYAN}] Échec de la connexion pour {Fore.GREEN}{email}")
+
 
 def test_accounts_from_file(file_path):
     with open(file_path, "r") as file:
@@ -84,7 +92,7 @@ print(rf"""{Fore.CYAN}
   `----.   \'   ;   /|'   ;   /||  | ' \ \ 
  /  /`--'  /'   |  / |'   |  / |'  : |--'  
 '--'.     / |   :    ||   :    |;  |,'     
-  `--'---'   \   \  /  \   \  / '--'     Coded by Slavith
+  `--'---'   \   \  /  \   \  / '--'       
               `----'    `----'             
                                            
 
