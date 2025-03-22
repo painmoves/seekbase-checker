@@ -4,4 +4,5 @@
 - Max accounts: **NO LIMIT**
 - 15 Accounts/m
 
-![image](https://github.com/user-attachments/assets/82bf9f94-4196-452c-8a91-21ae6f9b6264)
+![image](https://github.com/user-attachments/assets/87df2753-e7f1-456e-bcb0-06d5460c7c34)
+
